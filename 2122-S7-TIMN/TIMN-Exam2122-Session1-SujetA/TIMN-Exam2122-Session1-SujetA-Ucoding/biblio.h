@@ -1,13 +1,13 @@
 //
-//  bibliothequeA.h
+//  biblio.h
 //
 //
 
 /////////////////// Examen TIMN - session 1 - 6 javnier 2022
 
 
-#ifndef _bibliothequeA_h
-#define _bibliothequeA_h
+#ifndef _biblio_h
+#define _biblio_h
 
 void Afficher_matrice(int nb_lignes,int nb_colonnes, float ** matrice);
 
