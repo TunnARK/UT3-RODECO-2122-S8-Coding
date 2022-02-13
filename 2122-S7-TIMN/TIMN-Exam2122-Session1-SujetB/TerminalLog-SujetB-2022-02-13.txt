@@ -1,0 +1,102 @@
+gcc -Wall -c biblio.c -lm && gcc -Wall -o main main.c biblio.o -lm && ./main
+
+>>> Menu calendrier :
+         Taper 1 pour :  Saisir la date
+         Taper 2 pour :  Vérifier si c’est une annee bissextile
+         Taper 3 pour :  Calculer le nombre de jours dans 1 mois
+         Taper 4 pour :  Trouver le jour correspondant a la date
+         Taper 5 pour :  Afficher le jour correspondant a la date
+         !!! Faire 4 avant 5 !!!
+         Taper 6 pour :  Quitter le programme
+
+>>> Votre choix = 1
+
+         Saisir le jour (1-31): 16
+         Saisir le mois (1-12): 12
+         Saisir l'annee (0++): 2014
+
+-> Le jour est : 16-12-2014
+
+>>> Menu calendrier :
+         Taper 1 pour :  Saisir la date
+         Taper 2 pour :  Vérifier si c’est une annee bissextile
+         Taper 3 pour :  Calculer le nombre de jours dans 1 mois
+         Taper 4 pour :  Trouver le jour correspondant a la date
+         Taper 5 pour :  Afficher le jour correspondant a la date
+         !!! Faire 4 avant 5 !!!
+         Taper 6 pour :  Quitter le programme
+
+>>> Votre choix = 2
+
+-> 2014 n’est pas une année bissextile
+
+>>> Menu calendrier :
+         Taper 1 pour :  Saisir la date
+         Taper 2 pour :  Vérifier si c’est une annee bissextile
+         Taper 3 pour :  Calculer le nombre de jours dans 1 mois
+         Taper 4 pour :  Trouver le jour correspondant a la date
+         Taper 5 pour :  Afficher le jour correspondant a la date
+         !!! Faire 4 avant 5 !!!
+         Taper 6 pour :  Quitter le programme
+
+>>> Votre choix = 3
+
+-> Il y a 31 jours
+
+>>> Menu calendrier :
+         Taper 1 pour :  Saisir la date
+         Taper 2 pour :  Vérifier si c’est une annee bissextile
+         Taper 3 pour :  Calculer le nombre de jours dans 1 mois
+         Taper 4 pour :  Trouver le jour correspondant a la date
+         Taper 5 pour :  Afficher le jour correspondant a la date
+         !!! Faire 4 avant 5 !!!
+         Taper 6 pour :  Quitter le programme
+
+>>> Votre choix = 4
+
+         nombre_annee_bissextile = 488
+         reveillon = 2501
+                 nombre_jours(0) = 0
+                 nombre_jours(1) = 31
+                 nombre_jours(2) = 59
+                 nombre_jours(3) = 90
+                 nombre_jours(4) = 120
+                 nombre_jours(5) = 151
+                 nombre_jours(6) = 181
+                 nombre_jours(7) = 212
+                 nombre_jours(8) = 243
+                 nombre_jours(9) = 273
+                 nombre_jours(10) = 304
+                 nombre_jours(11) = 334
+         nombre_jours = 350
+         calendrier = 2851
+
+         2851 = ((0 + 2013 + 488) + 350)*7 + 2
+
+-> Le numero du jour est 2
+
+>>> Menu calendrier :
+         Taper 1 pour :  Saisir la date
+         Taper 2 pour :  Vérifier si c’est une annee bissextile
+         Taper 3 pour :  Calculer le nombre de jours dans 1 mois
+         Taper 4 pour :  Trouver le jour correspondant a la date
+         Taper 5 pour :  Afficher le jour correspondant a la date
+         !!! Faire 4 avant 5 !!!
+         Taper 6 pour :  Quitter le programme
+
+>>> Votre choix = 5
+
+-> Le 16-12-2014 est un mardi
+
+>>> Menu calendrier :
+         Taper 1 pour :  Saisir la date
+         Taper 2 pour :  Vérifier si c’est une annee bissextile
+         Taper 3 pour :  Calculer le nombre de jours dans 1 mois
+         Taper 4 pour :  Trouver le jour correspondant a la date
+         Taper 5 pour :  Afficher le jour correspondant a la date
+         !!! Faire 4 avant 5 !!!
+         Taper 6 pour :  Quitter le programme
+
+>>> Votre choix = 6
+
+Au revoir !
