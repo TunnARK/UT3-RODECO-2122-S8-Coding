@@ -15,6 +15,7 @@ void * Processus_Voiture ( void *arg ){
 
   // execution du processus (max nb_exec)
   while ( exec < nb_exec ){
+    printf ( "debut execution %d \n" , exec );
 
     // on récupère le numéro du philosophe courant
     for ( i = 0 ; i < nb_voie ; i++ ){
@@ -24,12 +25,14 @@ void * Processus_Voiture ( void *arg ){
     }
 
     // Entrer
-    printf ( "\t |--> une voiture entre dans le rond point par la voie %d \n" , num_voie );
+    printf ( "\t |--> \t une voiture entre dans le rond point par la voie %d \n" , num_voie );
     Entrer_RP ( num_voie );
 
     // Sortir
-    printf ( "\t -->| une voiture venant de la voie %d sort du rond point \n" , num_voie );
+    printf ( "\t -->| \t une voiture venant de la voie %d sort du rond point \n" , num_voie );
     Sortir_RP ( num_voie );
+
+    printf ( "fin execution %d \n\n" , exec );
 
     exec++ ; // incremente l'indice avant de passer a la prochaine execution
   }
@@ -51,9 +54,9 @@ int main ( void ){
 
   // attende de la terminaison de tous les thread
   for ( i = 0 ; i < nb_voie ; i++ ){
-    pthread_join ( voie_id [ i ] , NULL );
     printf ( "JOIN %d OK :\n" , i );
-    printf ( "le procesuss %d est TERMINE" , i );
+    pthread_join ( voie_id [ i ] , NULL );
+    printf ( "Procesuss %d TERMINED\n\n" , i );
   }
 
   return 0 ;
