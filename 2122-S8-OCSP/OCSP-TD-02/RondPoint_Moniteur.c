@@ -20,11 +20,11 @@ void Entrer_RP ( int voie ){
 
   if ( nb_voit_RP != 0 && voie_autorise != 0 ){
     nb_voit_attente [ voie ] += 1 ; // incremente le nb de voiture en attente
-    pthread_cond_wait ( & Cond_RP [ voie ] ); // attente de la possibilite d'entrer
+    pthread_cond_wait ( & Cond_RP [ voie ] , & mutex_moniteur ); // attente de la possibilite d'entrer
     // voiture entre
   }
 
-  if ( nb_voie_RP == 0 ){
+  if ( nb_voit_RP == 0 ){
     voie_autorise = voie ; // mise a jour de la voie autorisee
   }
 
@@ -37,7 +37,7 @@ void Entrer_RP ( int voie ){
 void Sortir_RP ( int voie ){
   pthread_mutex_lock ( & mutex_moniteur ); // debut zone critique
 
-  nb_voit_RP [ voie ] -= 1 ; // decremente le nb de voiture dans le rond point
+  nb_voit_RP -= 1 ; // decremente le nb de voiture dans le rond point
 
   if ( nb_voit_RP == 0 ){
     // declaration indice pour parcourrir les files d'attentes
