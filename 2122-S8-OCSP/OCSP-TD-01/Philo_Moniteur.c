@@ -1,6 +1,6 @@
-/* ------------------------------------------ */
-/* OCSP TD 01 Semaphore Philosophe - biblio.c */
-/* ------------------------------------------ */
+/* -------------------------------------------- */
+/*  OCSP TD 01 Semaphore Philosophe - biblio.c  */
+/* -------------------------------------------- */
 
 #include <pthread.h>
 #include "Moniteur_philo.h"
