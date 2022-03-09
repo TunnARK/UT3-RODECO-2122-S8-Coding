@@ -5,7 +5,7 @@
 
 
 // START CLASS MONITEUR
-package Buf ;
+//package Buf ;
 
 import java.util.concurrent.locks.* ;
 
@@ -79,7 +79,7 @@ public void Sortir_RP ( int voie ) {
 
 
 // START CLASS VOITURE
-import Buf.Moniteur_RP ;
+//import Buf.Moniteur_RP ;
 
 public class Voiture extends Thread {
 
@@ -111,7 +111,7 @@ public class Voiture extends Thread {
 
 
 // MAIN A FINIR
-import Buf.*;
+//import Buf.*;
 
 public class RP_main {
   public static void main ( String [] args ) {
