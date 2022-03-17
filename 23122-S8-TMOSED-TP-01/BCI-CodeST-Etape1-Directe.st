@@ -2,7 +2,7 @@
 (* TMOSED - Manip 1 (BCI) - MO Etape 1 Directe *)
 (* TP Grp1 Armand AUDIC & Antoine RONK         *)
 (* ------------------------------------------- *)
-
+test
 (* BLOC F *)
 CASE etatpresent OF
   1:
