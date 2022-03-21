@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
-#include "Moniteur_philo.h"
+#include "Philo_Moniteur.h"
 
 pthread_t philo_id[nb_philo];
 

@@ -3,7 +3,7 @@
 /* -------------------------------------------- */
 
 #include <pthread.h>
-#include "Moniteur_philo.h"
+#include "Philo_Moniteur.h"
 
 pthread_mutex_t mutex_moniteur;
 pthread_cond_t acces [nb_philo];
