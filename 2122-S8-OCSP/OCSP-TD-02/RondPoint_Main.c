@@ -27,6 +27,7 @@ void * Processus_Voiture ( void *arg ){
     // Entrer
     printf ( "\t |--> \t une voiture entre dans le rond point par la voie %d \n" , num_voie );
     Entrer_RP ( num_voie );
+    sleep(4);
 
     // Sortir
     printf ( "\t -->| \t une voiture venant de la voie %d sort du rond point \n" , num_voie );

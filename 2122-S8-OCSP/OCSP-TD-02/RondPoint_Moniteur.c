@@ -18,8 +18,14 @@ int voie_autorise = 0 ;
 void Entrer_RP ( int voie ){
   pthread_mutex_lock ( & mutex_moniteur ); // debut zone critique
 
+  // debugging data
+  printf ( "\t\t DATA CHECK: \n" );
+  printf ( "\t\t - nb_voie: %d \n" , nb_voie );
+  printf ( "\t\t - nb_voie: %d \n" , nb_voie );
+
+  nb_voit_attente [ voie ] += 1 ; // incremente le nb de voiture en attente
+
   if ( nb_voit_RP != 0 && voie_autorise != 0 ){
-    nb_voit_attente [ voie ] += 1 ; // incremente le nb de voiture en attente
     pthread_cond_wait ( & Cond_RP [ voie ] , & mutex_moniteur ); // attente de la possibilite d'entrer
     // voiture entre
   }
