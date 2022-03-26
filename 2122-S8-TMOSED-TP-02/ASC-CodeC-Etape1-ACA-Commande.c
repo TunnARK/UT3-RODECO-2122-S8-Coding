@@ -8,6 +8,24 @@
 #include <dask.h>
 #include "ACS-CodeC-Etape1-ACA-EntreesSorties.c"
 
+/* Table des cablages
+
+-> capteurs
+AP1=0 AP2=1 AP3=2 ET1=3 ET2=4 ET3=5 PorteOuverte=6
+sur le port B : bits 0 à 7 = entrées 0 à 7
+
+Par exemple, LireEntree(1) retourne l etat de AP2
+
+-> actionneurs
+Monter=0 Descendre=1
+sur le port A : bits 0 à 7 = sorties 0 à 7
+
+EcrireSortie(0,0) correspond a Monter Inactif
+EcrireSortie(0,1) correspond a Monter Actif
+EcrireSortie(1,0) correspond a Descendre Inactif
+EcrireSortie(1,1) correspond a Descendre Actif
+*/
+
 int main() {
   // declarer les informations ici
 	Reserver_Carte () ;
@@ -66,16 +84,16 @@ int main() {
 
     // Bloc F
   	if(p8 || p13) {
-  		EcrireSortie(0,1);
+  		EcrireSortie(0,1); // Monter Actif en p8 ou p13
   	}
   	if(p4 || p9) {
-  		EcrireSortie(1,1);
+  		EcrireSortie(1,1); // Descendre Actif en p4 ou p9
   	}
   	if(p1 || p2 || p3 || p4 || p5 || p6 || p7 || p9 || p10 || p11 || p12) {
-  		EcrireSortie(0,0);
+  		EcrireSortie(0,0); // Monter Inactif en p1 ou ... ou p12
   	}
   	if(p1 || p2 || p3 || p8 || p5 || p6 || p7 || p13 || p10 || p11 || p12) {
-  		EcrireSortie(1,0);
+  		EcrireSortie(1,0); // Descendre Inactif en p1 ou ... ou p12
   	}
   }
 
