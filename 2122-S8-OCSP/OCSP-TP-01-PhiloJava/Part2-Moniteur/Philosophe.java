@@ -17,7 +17,7 @@ public class Philosophe extends Thread {
 
 	public void run () {
 		long start = System.currentTimeMillis ();
-		Random rand = new Random ();
+
 		// boucle tant que la durée de vie du Thread est < à 5 secondes
 		while( System.currentTimeMillis () < ( start + ( 1000 * 5 ) ) ) {
 			try {
@@ -25,7 +25,7 @@ public class Philosophe extends Thread {
 				System.out.println ( "Philo " + this.Philo + " pense" );
 
 				// pause pense
-				Thread.sleep ( 750 );
+				Thread.sleep((long)(Math.random() * 1000));
 
 				System.out.println ( "Philo " + this.Philo + " a faim" );
 
@@ -34,14 +34,14 @@ public class Philosophe extends Thread {
 				System.out.println ( "Philo " + this.Philo + " mange" );
 
 				// pause a faim
-				Thread.sleep ( 500 );
+				Thread.sleep((long)(Math.random() * 1000));
 
 				Table.rendre_bag ( Philo );
 
 				System.out.println ( "Philo " + this.Philo + " a fini de manger" );
 
 				// pause pense
-				Thread.sleep ( 250 );
+				Thread.sleep((long)(Math.random() * 1000));
 
 			}
 			catch ( InterruptedException ex ) {}

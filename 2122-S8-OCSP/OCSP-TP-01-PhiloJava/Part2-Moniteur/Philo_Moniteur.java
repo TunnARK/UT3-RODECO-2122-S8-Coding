@@ -53,21 +53,40 @@ public class Philo_Moniteur {
 
 	// Methode pour connaitre le philosophe de gauche
 	public int gauche ( int Philo ) {
-		if (Philo == 0) {
-			return 4 ;
-		}
+		//return ( (Philo - 1) % Philo_Nb ); // le modulo pose probleme apparament
+		if (Philo == 0) { return 4 ; }
 		else {
-			return ( (Philo - 1) % Philo_Nb );
+			if (Philo == 1) { return 0 ; }
+			else {
+				if (Philo == 2) { return 1 ; }
+				else {
+					if (Philo == 3) { return 2 ; }
+					else { return 3 ;}
+				}
+			}
 		}
 	}
 
 	// Methode pour connaitre le philosophe de droite
 	public int droite ( int Philo ) {
+		/*
 		if (Philo == 0) {
 			return 4 ;
 		}
 		else {
-			return ( (Philo + 1) % Philo_Nb );
+			return ( (Philo + 1) % Philo_Nb ); // le modulo pose probleme apparament
+		}
+		*/
+		if (Philo == 0) { return 1 ; }
+		else {
+			if (Philo == 1) { return 2 ; }
+			else {
+				if (Philo == 2) { return 3 ; }
+				else {
+					if (Philo == 3) { return 4 ; }
+					else { return 0 ;}
+				}
+			}
 		}
 	}
 
