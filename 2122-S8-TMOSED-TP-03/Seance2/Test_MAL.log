@@ -1,41 +1,18 @@
-
-
- visalisation de la SD creee
-Les places --
- Place [p1]
-	 M0= [1]
-	Actions: [Moteur] 
-	suivant [p3]
-
- Place [p3]
-	 M0= [0]
-	Actions: [Alarme] 
-	suivant [p2]
-
- Place [p2]
-	 M0= [1]
-	Actions: pas d'action 
-	suivant [p4]
-
- Place [p4]
-	 M0= [0]
-	Actions: [Sens] [Moteur] 
-	suivant [(null)]
-
-Les transitions --
- transition [t1]
- 	 Predicat [Cancel='1']
-	 Actions []
-	 Structure : [ 1*p3  -> 1*p1 ]
- transition []
- 	 Predicat [Accept='1' and Po='1']
-	 Actions []
-	 Structure : [  -> ]
- transition [t4]
- 	 Predicat [Po='0']
-	 Actions []
-	 Structure : [ 1*p4  -> 1*p2 ]
- transition [пи]
- 	 Predicat [Accept='1' and Po='0']
-	 Actions []
-	 Structure : [  -> ]
+Liste des transitions
+Nom de la transition = t1 	NbpE = 1 	NbpS = 1 	action =  	predicat = Cancel='1'
+Nom de l'arc= p3 	Poids = 1
+Nom de l'arc= p1 	Poids = 1
+Nom de la transition =  	NbpE = 0 	NbpS = 0 	action =  	predicat = Accept='1' and Po='1'
+Nom de la transition = t4 	NbpE = 1 	NbpS = 1 	action =  	predicat = Po='0'
+Nom de l'arc= p4 	Poids = 1
+Nom de l'arc= p2 	Poids = 1
+Nom de la transition = п_ 	NbpE = 0 	NbpS = 0 	action =  	predicat = Accept='1' and Po='0'
+Liste des places
+Nom de la place= p1 	Mo = 1 	nbActions = 1
+Nom de l'action= Moteur 
+Nom de la place= p3 	Mo = 0 	nbActions = 1
+Nom de l'action= Alarme 
+Nom de la place= p2 	Mo = 1 	nbActions = 0
+Nom de la place= p4 	Mo = 0 	nbActions = 2
+Nom de l'action= Sens 
+Nom de l'action= Moteur 
