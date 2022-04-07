@@ -10,7 +10,7 @@ void NettoyerLaChaine (char *);
 
 void CreerStructure (char [MAX_NOM], Transition **, Place **);
 void GenererBlocF (Transition *TransitionsRdP, char [MAX_NOM]);
-void GenererLog (Place *, Transition * , char [MAX_NOM]);
+void GenererLog (Place * Pmef, Transition * Tmef, char [MAX_NOM]);
 void GenererPlaces (Place *, char [MAX_NOM]); 
 void GenererBlocG (Place *, char [MAX_NOM]);
 

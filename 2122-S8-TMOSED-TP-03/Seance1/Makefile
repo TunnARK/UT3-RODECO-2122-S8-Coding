@@ -35,8 +35,8 @@ types.o: types.c
 #	$(CC) -c CreerUnArc.c -o CreerUnArc.o  
 GenerateurCode.o: GenerateurCode.c
 	$(CC) -c GenerateurCode.c -o GenerateurCode.o  
-#	GenererLog.o: GenererLog.c
-#	$(CC) -c GenererLog.c -o GenererLog.o  
+	GenererLog.o: GenererLog.c
+	$(CC) -c GenererLog.c -o GenererLog.o  
 # GenererPlaces.o: GenererPlaces.c
 #	$(CC) -c GenererPlaces.c -o GenererPlaces.o  
 # GenererBlocG.o: GenererBlocG.c
