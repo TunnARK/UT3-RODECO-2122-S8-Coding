@@ -1,0 +1,1 @@
+Nom de la transition = t1 NbpE = 1 NbpS = 1 action =  predicat = Cancel='1'

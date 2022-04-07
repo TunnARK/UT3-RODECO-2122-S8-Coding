@@ -4,6 +4,6 @@
 
 void GenererBlocF (Transition * PremiereTransition, char LeFichierEnC[MAX_NOM])
 {
-...
+
 }
     

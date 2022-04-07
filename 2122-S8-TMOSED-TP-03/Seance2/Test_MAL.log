@@ -1,0 +1,41 @@
+
+
+ visalisation de la SD creee
+Les places --
+ Place [p1]
+	 M0= [1]
+	Actions: [Moteur] 
+	suivant [p3]
+
+ Place [p3]
+	 M0= [0]
+	Actions: [Alarme] 
+	suivant [p2]
+
+ Place [p2]
+	 M0= [1]
+	Actions: pas d'action 
+	suivant [p4]
+
+ Place [p4]
+	 M0= [0]
+	Actions: [Sens] [Moteur] 
+	suivant [(null)]
+
+Les transitions --
+ transition [t1]
+ 	 Predicat [Cancel='1']
+	 Actions []
+	 Structure : [ 1*p3  -> 1*p1 ]
+ transition []
+ 	 Predicat [Accept='1' and Po='1']
+	 Actions []
+	 Structure : [  -> ]
+ transition [t4]
+ 	 Predicat [Po='0']
+	 Actions []
+	 Structure : [ 1*p4  -> 1*p2 ]
+ transition [пи]
+ 	 Predicat [Accept='1' and Po='0']
+	 Actions []
+	 Structure : [  -> ]
