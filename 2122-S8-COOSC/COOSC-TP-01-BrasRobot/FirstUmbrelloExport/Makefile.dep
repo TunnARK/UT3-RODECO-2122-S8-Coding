@@ -1,4 +1,0 @@
-robot++.o: robot++.cpp robot++.h structure++.h
-structure++.o: structure++.cpp structure++.h
-systeme.o: systeme.cpp systeme.h
-main.o: main.cpp robot++.h structure++.h
