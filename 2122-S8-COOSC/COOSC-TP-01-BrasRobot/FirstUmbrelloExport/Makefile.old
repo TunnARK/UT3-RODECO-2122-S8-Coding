@@ -1,0 +1,38 @@
+CCC=g++
+
+BIN=    main.o robot++.o structure++.o systeme.o #tapis.o 
+
+all: $(BIN)
+	$(CCC)  -I/usr/include -I/usr/realtime/ -I/usr/realtime/include -O2 -I/usr/src/linux/include -Wall -Wstrict-prototypes -pipe -D__IN_RTAI__ -o main $(BIN)
+
+
+structure++.o: structure++.cpp 
+	$(CCC) -c -I/usr/include -I/usr/realtime/ -I/usr/realtime/include -O2 -I/usr/src/linux/include -Wall -Wstrict-prototypes -pipe -D__IN_RTAI__ structure++.cpp
+
+#tapis.o: tapis.cpp
+#	$(CCC) -c -I/usr/include -I/usr/realtime/ -I/usr/realtime/include -O2 -I/usr/src/linux/include -Wall -Wstrict-prototypes -pipe -D__IN_RTAI__ tapis.cpp
+
+robot++.o: robot++.cpp
+	$(CCC) -c -I/usr/include -I/usr/realtime/ -I/usr/realtime/include -O2 -I/usr/src/linux/include -Wall -Wstrict-prototypes -pipe -D__IN_RTAI__ robot++.cpp
+
+main.o:  main.cpp
+	$(CCC) -c -I/usr/include -I/usr/realtime/ -I/usr/realtime/include -O2 -I/usr/src/linux/include -Wall -Wstrict-prototypes -pipe -D__IN_RTAI__ main.cpp
+
+systeme.o:  systeme.cpp
+	$(CCC) -c -I/usr/include -I/usr/realtime/ -I/usr/realtime/include -O2 -I/usr/src/linux/include -Wall -Wstrict-prototypes -pipe -D__IN_RTAI__ systeme.cpp
+
+clean:
+	rm -f *.o
+
+
+
+
+
+
+
+
+
+
+
+
+
