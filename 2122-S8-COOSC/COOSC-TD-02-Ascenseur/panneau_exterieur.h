@@ -13,7 +13,7 @@
 #include "cabine.h"
 
 
-class panneau_exterieur : public systeme  
+class panneau_exterieur : public systeme
 {
 
 public:

@@ -53,7 +53,7 @@ int cabine::evolue(void)
 	// Ajout pour fonctionnement avec le panneau exterieur
 	if (place_[e_etage0] && place_[e_appel1])
 	{
-		place_[e_etage0]--; place_[e_appel1]--; 
+		place_[e_etage0]--; place_[e_appel1]--;
 		place_[e_monter]++;
         // monter();
 		return(nb_tr++);
@@ -61,7 +61,7 @@ int cabine::evolue(void)
 
 	if (place_[e_etage1] && place_[e_appel0])
 	{
-		place_[e_etage1]--; place_[e_appel0]--; 
+		place_[e_etage1]--; place_[e_appel0]--;
 		place_[e_descendre]++;
         // descendre();
 		return(nb_tr++);

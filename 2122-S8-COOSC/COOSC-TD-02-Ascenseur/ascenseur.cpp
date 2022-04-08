@@ -11,7 +11,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    
+
     // declaration des objets
 	cabine Asc;
 	panneau_exterieur P0(Asc);
@@ -43,4 +43,3 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
-

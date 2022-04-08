@@ -29,12 +29,12 @@ bool cab_etage1(void) {return(_cab_etage1);};
 void lecture_entrees(void)
 {
 	char readkey;
-	
-	_ext_bouton1=false; 
-	_ext_bouton0=false; 
-	_cab_bouton1=false; 
+
+	_ext_bouton1=false;
+	_ext_bouton0=false;
+	_cab_bouton1=false;
 	_cab_bouton0=false;
- 
+
 	//cout << "evaluation entrees \n(a:appel ext 1, q:appel ext 0, p:appel cabine 1, m:appel cabine 0)\n";
 	cin >> readkey;
 	//readkey=kbhit();
