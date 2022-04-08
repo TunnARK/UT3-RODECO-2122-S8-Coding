@@ -1,0 +1,8 @@
+systeme.o: systeme.cpp stdafx.h systeme.h environnement.h
+environnement.o: environnement.cpp stdafx.h environnement.h
+cabine.o: cabine.cpp stdafx.h cabine.h systeme.h environnement.h \
+  panneau_exterieur.h
+panneau_exterieur.o: panneau_exterieur.cpp stdafx.h panneau_exterieur.h \
+  systeme.h environnement.h cabine.h
+ascenseur.o: ascenseur.cpp stdafx.h systeme.h environnement.h cabine.h \
+  panneau_exterieur.h
