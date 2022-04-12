@@ -2,11 +2,11 @@
 // Pour compiler : make
 // Pour lancer : run monprog
 // Pour arreter : Connecter inter au port A bit 0. 0=ARRET 1=RUN
-// //////////////////////////////////////////// 
+// ////////////////////////////////////////////
 
 
 #include <iostream>
-#include <unistd.h> //pour sleep 
+#include <unistd.h> //pour sleep
 
 #include "robot++.h"
 
@@ -19,15 +19,15 @@ int main (void)
 {
   /* fin de vos declarations */
 
-  if (!init_comm()) 
+  if (!init_comm())
     exit (0);
-  sleep(1); // pause de 1 seconde 
+  sleep(1); // pause de 1 seconde
 
   /* Declarations */
 
   /* debut de vos initialisations */
 
-  
+
 
   /* fin de vos initialisations */
    cout << "Debut de l application" << endl;
@@ -36,7 +36,7 @@ int main (void)
     {
       /* 1. lecture des entrees */
 
- 
+
 
       /* 2. Evolution du R�eau de Petri */
 

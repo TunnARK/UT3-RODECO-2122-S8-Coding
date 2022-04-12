@@ -6,8 +6,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <sys/mman.h>
-#include <asm/io.h>
-#include <rtai_shm.h>
+#include <sys/io.h>//#include <asm/io.h>
+//#include <rtai_shm.h>
 
 #include "structure++.h"
 

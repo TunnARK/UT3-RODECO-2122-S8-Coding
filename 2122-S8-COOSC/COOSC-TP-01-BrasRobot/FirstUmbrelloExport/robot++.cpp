@@ -48,17 +48,17 @@ int init_comm(void)
   ADDRESS=(Tab_Etudiant *)rtai_malloc(NOM_MEMOIRE,sizeof(Tab_Etudiant));
   if(!ADDRESS)
     {
-      printf("ERROR : Probleme Ouverture de la mémoire partagée \n");
+      printf("ERROR : Probleme Ouverture de la mï¿½moire partagï¿½e \n");
       return 0;
     }
   else
-    printf("Mémoire partagée correctement ouverte\n");
+    printf("Mï¿½moire partagï¿½e correctement ouverte\n");
   sleep(1);
   return 1;
 }
 
 void reset_comm(void)
-{ 
+{
   StopTi(1);
   Stop2(1);
   Stop1(1);
@@ -73,11 +73,3 @@ void reset_comm(void)
   Stop1(0);
   rtai_free(NOM_MEMOIRE,ADDRESS);
 }
-
-
-
-
-
-
-
-
