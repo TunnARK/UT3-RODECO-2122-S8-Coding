@@ -28,7 +28,7 @@ void GenererBlocF (Transition * PremiereTransition, char LeFichierEnC[MAX_NOM])
 				enr[i]=Tcheck->Nom;
 				i++;
 			}
-			Tcheck=Tchek->Suivant;	
+			Tcheck=Tchek->Suivant;
 
 		}
 		i=0;

@@ -5,47 +5,46 @@
 void GenererBlocF (Transition * PremiereTransition, char LeFichierEnC[MAX_NOM])
 {
 	Transition *Tre;
-	Transition *Teng;
+	//Transition *Teng;
 	Transition *Tcheck;
-	char place[MAX_NOM];
-	char enr[MAX_NOM];
-	int a=0,cont=0,i=0;
+	char place[MAX_NOM]="0";
+	char enr[10][MAX_NOM];
+	int i=0;
 	Arc * Arcs;
-	Arc *Arce;
-	Teng = PremiereTransition;
+	//Arc *Arce;
+	//Teng = PremiereTransition;
 	Tre = PremiereTransition;
 	Tcheck = PremiereTransition;
-	Arcs = PremiereTransition->ArcSortants;
-	place = Arcs->Place;
-	FILE *structure;
-	structure  = fopen(LeFichierEnC,"w");
-
+	Arcs = PremiereTransition->ArcsSortants;
+	strcpy(place,Arcs->Place);
+	//FILE *structure;
+	//structure  = fopen(LeFichierEnC,"w");
+	//printf("enr%c\n",enr[1][1]);
 	while(Tre!=NULL){
+		printf("ES_%c = EP_%c and %s\n",Tre->ArcsSortants->Place[1],Tre->ArcsEntrants->Place[1],Tre->Predicat);
 		Tcheck = PremiereTransition;
-		while(Tcheck!=NULL){
-
-			if(Tcheck->ArcSortants->Place==Tre->ArcSortant->Place){
-				enr[i]=Tcheck->Nom;
+		/*while(Tcheck!=NULL){
+			if(Tcheck->ArcsSortants->Place==Arcs->Place){
+				strcpy(enr[i][],Tcheck->Nom);//a modifier ou rajouter des trucs
 				i++;
-			}
-			Tcheck=Tchek->Suivant;	
-
-		}
+				printf(" transition lie a %s sont %s  dev y av %s\n",Tre->Nom,enr[i][],Tcheck->Nom);
+			}	
+			Tcheck=Tcheck->Suivant;	
+		}*/
 		i=0;
-		Tcheck=PremierTransition;
-		Arcs = Tre->ArcSortants;
-		Arce = Tre->ArcEntrants;
-		place = Arcs->Place;
-		printf("%s <- %s and %s",Tre->ArcSortants->Place,Tre->Nom,Tre->ArcEntrants->Place);
-		while(Teng!=NULL){
-			if(place==Teng->ArcSortants->Place){
+		Arcs = Tre->ArcsSortants;
+		//Arce = Tre->ArcsEntrants;
+		//printf("%s <- %s and %s\n",Tre->ArcsSortants->Place,Tre->Nom,Tre->ArcsEntrants->Place);
+		/*while(Teng!=NULL){
+			if(Arcs->Place ==Teng->ArcsSortants->Place){
 				printf(" or ");
-				printf("%s and %s",Teng->ArcEntrants->Place,Teng->Nom);
+				printf("%s and %s",Teng->ArcsEntrants->Place,Teng->Nom);
 			}
 		}
 		Teng = Tre;
-		printf(";\n");
+		printf(";\n");*/
+		Tre = Tre->Suivant;
 	}
-	fclose(structure);
+	//fclose(structure);
 
 }
