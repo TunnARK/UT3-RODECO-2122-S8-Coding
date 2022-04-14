@@ -1,0 +1,83 @@
+#include "tindex.h"
+
+tindex::tindex() :systeme(8){
+place_[0] = 1;
+}
+
+tindex::~tindex(){}
+
+int tindex::evolue(int comp){
+	if(place_[0]&&FinPose()==1)
+	{
+		place_[0]--;
+		place_[1]++;
+		marche();
+	}
+	if(place_[1]&&I()==0)
+	{
+		place_[1]--;
+		place_[2]++;
+	}
+	if(place_[2]&&I()==1)
+	{
+		place_[2]--;
+		place_[3]++;
+		arreter();
+	}
+	if(place_[3]&&comp<8)
+	{
+		place_[3]--;
+		place_[0]++;
+		comp++;
+	}
+	if(place_[3]&&comp==8)
+	{
+		place_[3]--;
+		place_[4]++;
+	}
+	if(place_[4]&&FinPrise()==1)
+	{
+		place_[4]--;
+		place_[5]++;
+		marche();
+	}
+	if(place_[5]&&I()==0)
+	{
+		place_[5]--;
+		place_[6]++;
+	}
+	if(place_[6]&&I()==1)
+	{
+		place_[6]--;
+		place_[7]++;
+		arreter();
+	}
+	if(place_[7]&&comp>0)
+	{
+		place_[7]--;
+		place_[4]++;
+		comp--;
+	}
+	if(place_[7]&&comp==0)
+	{
+		place_[7]--;
+		place_[0]++;
+	}
+	return(comp);
+}
+
+void tindex::init(){
+	marche();
+	while(TI()!=1);
+	arreter();
+}
+
+
+void tindex::marche() {
+	StartTi(0);
+	StopTi(1);
+}
+void tindex::arreter() {
+	StopTi(0);
+	StartTi(1);
+}

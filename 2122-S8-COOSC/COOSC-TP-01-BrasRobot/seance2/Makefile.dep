@@ -1,0 +1,91 @@
+robot++.o: robot++.cpp robot++.h /usr/realtime/include/rtai_shm.h \
+  /usr/realtime/include/rtai_lxrt.h /usr/realtime/include/rtai_sched.h \
+  /usr/realtime/include/rtai.h /usr/realtime/include/rtai_sanity.h \
+  /usr/realtime/include/asm/rtai.h /usr/realtime/include/rtai_config.h \
+  /usr/src/linux/include/linux/config.h \
+  /usr/src/linux/include/linux/autoconf.h \
+  /usr/realtime/include/asm/rtai_hal.h \
+  /usr/realtime/include/asm/rtai_vectors.h \
+  /usr/realtime/include/rtai_types.h \
+  /usr/realtime/include/rtai_wrappers.h \
+  /usr/realtime/include/asm/rtai_oldnames.h \
+  /usr/realtime/include/rtai_nam2num.h \
+  /usr/realtime/include/asm/rtai_lxrt.h \
+  /usr/src/linux/include/linux/version.h structure++.h
+structure++.o: structure++.cpp structure++.h
+systeme.o: systeme.cpp systeme.h
+main.o: main.cpp robot++.h /usr/realtime/include/rtai_shm.h \
+  /usr/realtime/include/rtai_lxrt.h /usr/realtime/include/rtai_sched.h \
+  /usr/realtime/include/rtai.h /usr/realtime/include/rtai_sanity.h \
+  /usr/realtime/include/asm/rtai.h /usr/realtime/include/rtai_config.h \
+  /usr/src/linux/include/linux/config.h \
+  /usr/src/linux/include/linux/autoconf.h \
+  /usr/realtime/include/asm/rtai_hal.h \
+  /usr/realtime/include/asm/rtai_vectors.h \
+  /usr/realtime/include/rtai_types.h \
+  /usr/realtime/include/rtai_wrappers.h \
+  /usr/realtime/include/asm/rtai_oldnames.h \
+  /usr/realtime/include/rtai_nam2num.h \
+  /usr/realtime/include/asm/rtai_lxrt.h \
+  /usr/src/linux/include/linux/version.h structure++.h tapis.h systeme.h \
+  tapis2.h tindex.h Bras.h
+Bras.o: Bras.cpp Bras.h systeme.h robot++.h \
+  /usr/realtime/include/rtai_shm.h /usr/realtime/include/rtai_lxrt.h \
+  /usr/realtime/include/rtai_sched.h /usr/realtime/include/rtai.h \
+  /usr/realtime/include/rtai_sanity.h /usr/realtime/include/asm/rtai.h \
+  /usr/realtime/include/rtai_config.h \
+  /usr/src/linux/include/linux/config.h \
+  /usr/src/linux/include/linux/autoconf.h \
+  /usr/realtime/include/asm/rtai_hal.h \
+  /usr/realtime/include/asm/rtai_vectors.h \
+  /usr/realtime/include/rtai_types.h \
+  /usr/realtime/include/rtai_wrappers.h \
+  /usr/realtime/include/asm/rtai_oldnames.h \
+  /usr/realtime/include/rtai_nam2num.h \
+  /usr/realtime/include/asm/rtai_lxrt.h \
+  /usr/src/linux/include/linux/version.h structure++.h
+tindex.o: tindex.cpp tindex.h systeme.h robot++.h \
+  /usr/realtime/include/rtai_shm.h /usr/realtime/include/rtai_lxrt.h \
+  /usr/realtime/include/rtai_sched.h /usr/realtime/include/rtai.h \
+  /usr/realtime/include/rtai_sanity.h /usr/realtime/include/asm/rtai.h \
+  /usr/realtime/include/rtai_config.h \
+  /usr/src/linux/include/linux/config.h \
+  /usr/src/linux/include/linux/autoconf.h \
+  /usr/realtime/include/asm/rtai_hal.h \
+  /usr/realtime/include/asm/rtai_vectors.h \
+  /usr/realtime/include/rtai_types.h \
+  /usr/realtime/include/rtai_wrappers.h \
+  /usr/realtime/include/asm/rtai_oldnames.h \
+  /usr/realtime/include/rtai_nam2num.h \
+  /usr/realtime/include/asm/rtai_lxrt.h \
+  /usr/src/linux/include/linux/version.h structure++.h
+tapis.o: tapis.cpp tapis.h systeme.h robot++.h \
+  /usr/realtime/include/rtai_shm.h /usr/realtime/include/rtai_lxrt.h \
+  /usr/realtime/include/rtai_sched.h /usr/realtime/include/rtai.h \
+  /usr/realtime/include/rtai_sanity.h /usr/realtime/include/asm/rtai.h \
+  /usr/realtime/include/rtai_config.h \
+  /usr/src/linux/include/linux/config.h \
+  /usr/src/linux/include/linux/autoconf.h \
+  /usr/realtime/include/asm/rtai_hal.h \
+  /usr/realtime/include/asm/rtai_vectors.h \
+  /usr/realtime/include/rtai_types.h \
+  /usr/realtime/include/rtai_wrappers.h \
+  /usr/realtime/include/asm/rtai_oldnames.h \
+  /usr/realtime/include/rtai_nam2num.h \
+  /usr/realtime/include/asm/rtai_lxrt.h \
+  /usr/src/linux/include/linux/version.h structure++.h
+tapis2.o: tapis2.cpp tapis2.h systeme.h robot++.h \
+  /usr/realtime/include/rtai_shm.h /usr/realtime/include/rtai_lxrt.h \
+  /usr/realtime/include/rtai_sched.h /usr/realtime/include/rtai.h \
+  /usr/realtime/include/rtai_sanity.h /usr/realtime/include/asm/rtai.h \
+  /usr/realtime/include/rtai_config.h \
+  /usr/src/linux/include/linux/config.h \
+  /usr/src/linux/include/linux/autoconf.h \
+  /usr/realtime/include/asm/rtai_hal.h \
+  /usr/realtime/include/asm/rtai_vectors.h \
+  /usr/realtime/include/rtai_types.h \
+  /usr/realtime/include/rtai_wrappers.h \
+  /usr/realtime/include/asm/rtai_oldnames.h \
+  /usr/realtime/include/rtai_nam2num.h \
+  /usr/realtime/include/asm/rtai_lxrt.h \
+  /usr/src/linux/include/linux/version.h structure++.h
