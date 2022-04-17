@@ -1,11 +1,11 @@
 // START CLASS VOITURE
 
-package RP ;
+package rond_point ;
 
 public class Voiture extends Thread {
 
   private int voie = 0 ;
-  Moniteur_RP Monbuffer ;
+  Moniteur_RP RondPoint ;
 
   public Voiture ( String Name , Moniteur_RP RP ) {
     this.voie = voie ;
@@ -19,12 +19,15 @@ public class Voiture extends Thread {
     while( System.currentTimeMillis () < ( start + ( 1000 * 5 ) ) ) {
       try {
         RondPoint.Entrer_RP ( voie );
+        System.out.println ( "Voit voie " + this.voie + " entre" );
         // pause tourner
         Thread.sleep ( 500 );
       }
       catch ( InterruptedException ex ) {}
     }
     RondPoint.Sortir_RP ( voie );
+    System.out.println ( "Voit voie " + this.voie + " sort" );
   }
 }
+
 // END CLASS VOITURE
