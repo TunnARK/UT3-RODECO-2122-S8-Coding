@@ -17,7 +17,7 @@ void GenererLog (Place * Pmef, Transition * Tmef, char nom[MAX_NOM])
 		fprintf(structure,"Nom de la transition = %s 	NbpE = %d 	NbpS = %d 	action = %s 	predicat = %s\n",Tre->Nom,Tre->NbPlacesEntree,Tre->NbPlacesSortie,Tre->Actions,Tre->Predicat);
 		Arce = Tre->ArcsEntrants;
 		Arcs = Tre->ArcsSortants;
-		while(Arce!=NULL){			
+		while(Arce!=NULL){
 			fprintf(structure,"Nom de l'arc= %s 	Poids = %d\n",Arce->Place,Arce->Poids);
 			Arce = Arce->Suivant;
 		}
@@ -32,7 +32,7 @@ void GenererLog (Place * Pmef, Transition * Tmef, char nom[MAX_NOM])
 		fprintf(structure,"Nom de la place= %s 	Mo = %d 	nbActions = %d\n",Pre->Nom,Pre->Mo,Pre->NbActions);
 		act = Pre->Actions;
 		while(act!=NULL){
-			
+
 			fprintf(structure,"Nom de l'action= %s \n",act->Actions);
 			act = act->Suivant;
 		}

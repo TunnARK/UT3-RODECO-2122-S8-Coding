@@ -11,12 +11,13 @@ void NettoyerLaChaine (char *);
 void CreerStructure (char [MAX_NOM], Transition **, Place **);
 void GenererBlocF (Transition *TransitionsRdP, char [MAX_NOM]);
 void GenererLog (Place * Pmef, Transition * Tmef, char [MAX_NOM]);
-void GenererPlaces (Place *, char [MAX_NOM]); 
+void GenererPlaces (Place *, char [MAX_NOM]);
 void GenererBlocG (Place *, char [MAX_NOM]);
+void codef (Transition * Tstart, char LeFichierEnC[MAX_NOM]);
 
 int main(void)
 {
-Transition * TransitionsRdP=NULL; 
+Transition * TransitionsRdP=NULL;
 Place      * PlacesRdP=NULL;
 
 
@@ -36,14 +37,14 @@ strcat(LeFichierLog,".log");
 // ouverture du fichier issus de tina
 
 CreerStructure (LeFichierTINA, &TransitionsRdP, &PlacesRdP);
- 
- 
+
+
 GenererLog (PlacesRdP, TransitionsRdP, LeFichierLog);
 GenererPlaces (PlacesRdP, LeFichierPlaces);
+//codef(TransitionsRdP, LeFichierEnC);
 GenererBlocF (TransitionsRdP, LeFichierEnC);
 GenererBlocG (PlacesRdP, LeFichierBlocG);
 
 
-return 1;              
-}   
-    
+return 1;
+}

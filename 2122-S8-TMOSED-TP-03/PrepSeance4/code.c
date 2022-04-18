@@ -1,25 +1,27 @@
 #include "types.c"
 #include <string.h>
 
-void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
+void codef (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 
 	printf("\n\n>>> Code Block F:\n\n");
 
 	// Declaration Variables
 	Transition * Tencours ; // Transisition en cours de traitement
+	Transition * Tverif		; // Transisition en cours de traitement (verif.)
 	Transition * Tinter		; // Transisition intermediaire pour verification
+	//	char PEencours[MAX_NOM]			; // Place ArcsEntrants en cours de traitement
+	//	char PSencours[MAX_NOM]			; // Place ArcsSortants en cours de traitement
 
 	// Variables pour garder trace des equatons deja ecrite
 	int indice = 0 ;
 	char Trace[20] = "" ;
 	int flag = 1 ; // Autorisation de poursuivre
 
-/*
-	// Verification de Lecture et Extraction des donnees
-	Transition * Tverif		; // Transisition en cours de traitement (verif.)
 	int indver = 0 ;
 	char Trver[20] = "" ;
 
+
+	// Verification de Lecture et Extraction des donnees
 	printf( "\n--> Verification ET Extraction:\n\n" );
 
 	Tverif = Tstart ;
@@ -37,46 +39,47 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 		Tverif = Tverif->Suivant ;
 		indver++ ;
 	}
-*/
 
 	// Initialisation sur les parametres donnees a la fonction GenererBlocF
 	Tencours = Tstart ;
 
 	// Parcours des transitions pour recuperer les equations du bloc F
 	while ( Tencours != NULL ) {
+//		printf ( "\n\nTencours = %s \t Trace[%d] = %d \t flag = %d\n\n", Tencours->Nom, indice, Trace[indice], flag );
 
 		// Ecriture autorisee
 		if ( flag == 1 ) {
-//
-			// Ecriture de l equation
 			printf("\t ES_%c = EP_%c and %s", Tencours->ArcsSortants->Place[1], Tencours->ArcsEntrants->Place[1], Tencours->Predicat );
 
-			Trace[indice] = Tencours->ArcsSortants->Place[1] ; // Tracabilite des places deja traitees
+			Trace[indice] = Tencours->ArcsSortants->Place[1] ;
 
-			Tinter = Tencours->Suivant ; // Tinter prends la valeur de Tencours Suivante
+			Tinter = Tencours->Suivant ;
 
 			while ( Tinter != NULL ) {
-				// Si Tinter et Tencours ont d autres places sortants en commun alors completer eqution
+//				printf ( "\n\n\t\t\t\tTinter = %s\n\n", Tinter->Nom );
+
 				if ( Tinter->ArcsSortants->Place[1] == Tencours->ArcsSortants->Place[1] ) {
 					printf(" or EP_%c and %s", Tinter->ArcsEntrants->Place[1], Tinter->Predicat );
 				}
-				Tinter = Tinter->Suivant ; // Tinter Suivante
-			}
 
-			printf ( "\n\n" );
+				Tinter = Tinter->Suivant ;
+			}
 		}
 
-		Tencours = Tencours->Suivant ; // Tencours Suivante
+//		printf("\t\t\t\t\t\t\t\t Test suivant\n");
+		Tencours = Tencours->Suivant ;
 
 		// Autorisation
 		if ( Tencours != NULL ) {
 			for ( int i = 0 ; i < 20 ; i++ ) {
 				if ( Tencours->ArcsSortants->Place[1] == Trace[i] ) {
 					flag = 0 ; // Interdiction de poursuivre
+//					printf("\nPSencours = %d =?= %d = Trace[%d] \t flag = %d \t Interdit", Tencours->ArcsSortants->Place[1], Trace[i], i, flag );
 					break ;
 				} else { flag = 1 ; }
+//				printf( "\nPSencours = %d =?= %d = Trace[%d] \t flag = %d", Tencours->ArcsSortants->Place[1], Trace[i], i, flag );
 			}
-		} else { printf("\n\n Boucle Finie \n\n"); break; }
+		} else { printf("Boucle Finie\n"); break; }
 
 		indice++ ;
 	}
