@@ -21,11 +21,19 @@ int main(int argc, char ** argv)
 	/* ouverture d'une socket */
 	sock = socket(AF_INET, SOCK_STREAM, 0);
 
+	/* structure hostent ajoutee */
+	struct hostent *he ;
+	if ( ( he = gethostbyname ( "katia.ups-tlse.fr" ) ) == NULL ) {
+		perror ( "gethostbyname" ) ;
+		exit ( 2 ) ;
+	}
+	memcpy ( & sock_host.sin_addr , he->h_addr_list[0] , sizeof ( soch_host.sin_addr ) ) ;
+
 	/* on cree l'adresse de la machine distante */
-	memset(& sock_host, '\0', sizeof(sock_host));
+//	memset(& sock_host, '\0', sizeof(sock_host));
 	sock_host.sin_family = AF_INET;
 	sock_host.sin_port = htons(port);
-	inet_aton("127.0.0.1", & sock_host.sin_addr);
+//	inet_aton("127.0.0.1", & sock_host.sin_addr);
 
 	/* on demande un connection sur l'adresse distante */
 	connect(sock, (struct sockaddr *) & sock_host, sizeof(sock_host));
