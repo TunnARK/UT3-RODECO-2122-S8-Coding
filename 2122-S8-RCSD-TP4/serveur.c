@@ -41,7 +41,10 @@ int main(int argc, char ** argv)
 		sz_sock_serveur = sizeof(serveur_adr);
 
 		/* recupere les donnes du client */
-		sock_distante = accept(sock, (struct sockaddr *) & serveur_adr,& sz_sock_serveur);;
+		sock_distante = accept(sock, (struct sockaddr *) & serveur_adr,& sz_sock_serveur);
+
+		/* ajout fonction inet_ntoa pour afficher l addresse du client */
+		printf ( "%s\n", inet_ntoa ( serveur_adr.sin_addr ) ;
 
 		/* lecture de la chaine */
 		sz_buf = read(sock_distante, buf, 1234);
