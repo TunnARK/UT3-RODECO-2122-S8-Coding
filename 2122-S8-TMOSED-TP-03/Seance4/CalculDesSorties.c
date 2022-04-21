@@ -1,3 +1,3 @@
-Alarme <= p0  or p2
-Sens <= p0  or p2 or p1
-Moteur <= p0  or p1
+Alarme <= EP_0  or EP_2;
+Sens <= EP_0  or EP_2 or EP_1;
+Moteur <= EP_0  or EP_1;

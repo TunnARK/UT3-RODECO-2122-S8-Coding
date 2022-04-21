@@ -1,0 +1,24 @@
+p 30.0 125.0 p0 0 n {[Moteur,Sens,Alarme]} e
+t 375.0 40.0 t2 c 0 w n {[not(Po);]} e
+t 70.0 220.0 t1 c 0 w n {[Accept and not(Po);]} e
+t 75.0 35.0 t0 c 0 w n {[not(Po);]} e
+t 225.0 25.0 t4 c 0 w n {[not(Accept);]} e
+t 310.0 235.0 t3 c 0 w n {[Cancel and Po;]} e
+p 480.0 140.0 p2 0 n {[Sens,Alarme]} e
+t 300.0 180.0 t5 c 0 w n {[not(Cancel);]} ne
+p 240.0 110.0 p1 0 n {[Moteur,Sens]} e
+e p0 t0 1 n
+e t0 p1 1 n
+e p1 t2 1 n
+e t2 p2 1 n
+e p2 t3 1 n
+e p1 t1 1 n
+e t1 p0 1 n
+e p2 t4 1 n
+e t4 p0 1 n
+e t3 p0 1 n
+e p2 t5 1 n
+e t5 p1 1 n
+h Tmod
+
+

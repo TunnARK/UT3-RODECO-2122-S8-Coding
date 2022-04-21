@@ -3,7 +3,8 @@
 
 
 void GenererBlocG (Place *PlacesRdP, char LeFichierBlocG[MAX_NOM]){
-	
+  printf("\n\n>>> Generation Code Block M\n\n");
+
 	Place * pec;
  	Place * pinter;
 	Action * act;
@@ -13,8 +14,8 @@ void GenererBlocG (Place *PlacesRdP, char LeFichierBlocG[MAX_NOM]){
 	int flag = 1 ; // Autorisation de poursuivre
 	FILE *structure;
 	structure  = fopen(LeFichierBlocG,"w");
-	pec = PlacesRdP;	
-	
+	pec = PlacesRdP;
+
 	while(pec != NULL){
 		act = pec->Actions;
 		pinter = pec;
@@ -28,33 +29,28 @@ void GenererBlocG (Place *PlacesRdP, char LeFichierBlocG[MAX_NOM]){
 					}
 				}
 				if(flag==1) {
-					fprintf(structure, "%s <= %s ",act->Actions,pec->Nom);
+					fprintf(structure, "%s <= EP_%c ",act->Actions,pec->Nom[1]);
 					Trace[indice] = act->Actions[0];
 					ainter = act;
 					pinter = pec;
 					while(pinter!=NULL){
 						if(pinter!=pec){
 							ainter=pinter->Actions;
-							while(ainter!=NULL){	
+							while(ainter!=NULL){
 								if(ainter->Actions[0]==act->Actions[0]){
-									fprintf(structure," or %s",pinter->Nom);
+									fprintf(structure," or EP_%c",pinter->Nom[1]);
 								}
 								ainter=ainter->Suivant;
 							}
 						}
 						pinter=pinter->Suivant;
 					}
-					fprintf(structure,"\n");
-					printf("\n");
+					fprintf(structure,";\n");
 				}
 				act = act->Suivant;
-					
-				
-
-
 				indice++;
 			}
 		pec=pec->Suivant;
-
 	}
+  printf("\n\n>>> Generation Code Block M Finie\n\n");
 };
