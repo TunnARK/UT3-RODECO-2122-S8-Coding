@@ -1,40 +1,6 @@
 #include "types.c"
 #include <string.h>
 
-
-// Retourne la position du char c dans string
-int get_index(char* string, char c) {
-    char *e = strchr(string, c);
-    if (e == NULL) {
-        return -1; // message erreur si char not found
-    }
-    return (int)(e - string);
-}
-
-// Retourne la negation du predicat de la transition T
-void Negation ( Transition * T, char * NegPred ) {
-	char 	 x 		= '\''	; // on cherche la premiere occurence de ' dans le predicat
-	char * un 	= "1" 	;
-	char * zero = "0" 	;
-
-	if ( T->Predicat[get_index(T->Predicat, x)+1] == un[0] ) {
-
-		T->Predicat[get_index(T->Predicat, x)+1] = '0' ; // remplace 1 par 0
-
-		*       NegPred = T->Predicat ; // stocke la negation du predicat dans NegPred
-		printf("\n\n->%s\n\n", NegPred );
-	} else {
-
-		if ( T->Predicat[get_index(T->Predicat, x)+1] == zero[0] ) {
-
-			T->Predicat[get_index(T->Predicat, x)+1] = '1' ; // remplace 0 par 1
-
-			NegPred = T->Predicat ; // stocke la negationd du predicat dans NegPred
-			printf("\n\n-->%s\n\n", NegPred );
-		} else { printf("\n\n \t !!! \t error: \t no ' found in predicat\n\n"); }
-	}
-}
-
 void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 	printf("\n\n>>> Code Block F:\n\n");
 
@@ -107,9 +73,7 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 			while ( Tinter2 != NULL ) {
 				// Regrouper les termes de maintiens (chercher les transitions non sensibilisees de place en cours)
 				if ( Tinter2->ArcsSortants->Place[1] == Tencours->ArcsSortants->Place[1] ) {
-					char * NegPred ;
-					Negation( Tinter2, &NegPred );
-					printf(" or EP_%c and %s", Tinter2->ArcsSortants->Place[1], NegPred );
+					printf(" or EP_%c and not(%s)", Tinter2->ArcsSortants->Place[1], Tinter2->Predicat );
 				}
 				Tinter2 = Tinter2->Suivant ; // Tinter2 Suivante
 			}
