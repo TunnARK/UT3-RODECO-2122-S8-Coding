@@ -14,7 +14,7 @@ Nom de l'arc= p0 	Poids = 1
 Nom de la transition = t3 	NbpE = 1 	NbpS = 1 	action =  	predicat = Cancel = '1'
 Nom de l'arc= p2 	Poids = 1
 Nom de l'arc= p0 	Poids = 1
-Nom de la transition = t5 	NbpE = 1 	NbpS = 1 	action =  	predicat = t5
+Nom de la transition = t5 	NbpE = 1 	NbpS = 1 	action =  	predicat = Accept = '1'
 Nom de l'arc= p2 	Poids = 1
 Nom de l'arc= p1 	Poids = 1
 Liste des places
