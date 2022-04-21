@@ -1,0 +1,15 @@
+Liste des transitions
+Nom de la transition = t1 	NbpE = 1 	NbpS = 1 	action =  	predicat = Cancel='1'
+Nom de l'arc= p3 	Poids = 1
+Nom de l'arc= p1 	Poids = 1
+Nom de la transition = t3 	NbpE = 1 	NbpS = 1 	action =  	predicat = Accept='1' and Po='1'
+Nom de l'arc= p1 	Poids = 1
+Nom de l'arc= p3 	Poids = 1
+Nom de la transition = t2 	NbpE = 1 	NbpS = 1 	action =  	predicat = Accept='1' and Po='0'
+Nom de l'arc= p1 	Poids = 1
+Nom de l'arc= p3 	Poids = 1
+Liste des places
+Nom de la place= p1 	Mo = 1 	nbActions = 1
+Nom de l'action= Moteur 
+Nom de la place= p3 	Mo = 0 	nbActions = 1
+Nom de l'action= Alarme 

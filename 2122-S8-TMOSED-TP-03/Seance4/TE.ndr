@@ -1,0 +1,12 @@
+p 195.0 30.0 p1 1 w {[Moteur]} e
+p 195.0 190.0 p3 0 w {[Alarme]} e
+t 25.0 100.0 t1 c 0 w n {[Cancel='1';]} e
+t 355.0 115.0 t3 c 0 w n {[Accept='1' and Po='1';]} e
+t 150.0 110.0 t2 c 0 w n {[Accept='1' and Po='0';]} e
+e t3 p3 1 n
+e p1 t3 1 n
+e t1 p1 1 n
+e p3 t1 1 n
+e t2 p3 1 n
+e p1 t2 1 n
+h TE
