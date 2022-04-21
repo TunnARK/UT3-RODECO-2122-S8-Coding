@@ -1,13 +1,47 @@
 #include "types.c"
 #include <string.h>
 
-void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 
+// Retourne la position du char c dans string
+int get_index(char* string, char c) {
+    char *e = strchr(string, c);
+    if (e == NULL) {
+        return -1; // message erreur si char not found
+    }
+    return (int)(e - string);
+}
+
+// Retourne la negation du predicat de la transition T
+void Negation ( Transition * T, char * NegPred ) {
+	char 	 x 		= '\''	; // on cherche la premiere occurence de ' dans le predicat
+	char * un 	= "1" 	;
+	char * zero = "0" 	;
+
+	if ( T->Predicat[get_index(T->Predicat, x)+1] == un[0] ) {
+
+		T->Predicat[get_index(T->Predicat, x)+1] = '0' ; // remplace 1 par 0
+
+		NegPred = T->Predicat ; // stocke la negationd du predicat dans NegPred
+
+	} else {
+
+		if ( T->Predicat[get_index(T->Predicat, x)+1] == zero[0] ) {
+
+			T->Predicat[get_index(T->Predicat, x)+1] = '1' ; // remplace 0 par 1
+
+			NegPred = T->Predicat ; // stocke la negationd du predicat dans NegPred
+
+		} else { printf("\n\n \t !!! \t error: \t no ' found in predicat\n\n"); }
+	}
+}
+
+void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 	printf("\n\n>>> Code Block F:\n\n");
 
 	// Declaration Variables
-	Transition * Tencours ; // Transisition en cours de traitement
-	Transition * Tinter		; // Transisition intermediaire pour verification
+	Transition * Tencours 	; // Transisition en cours de traitement
+	Transition * Tinter			; // Transisition intermediaire pour verification
+	Transition * Tinter2		; // Transisition intermediaire pour terme maintien
 
 	// Variables pour garder trace des equatons deja ecrite
 	int indice = 0 ;
@@ -47,7 +81,7 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 
 		// Ecriture autorisee
 		if ( flag == 1 ) {
-//
+			printf("coucou\n");
 			// Ecriture de l equation
 			printf("\t ES_%c = EP_%c and %s", Tencours->ArcsSortants->Place[1], Tencours->ArcsEntrants->Place[1], Tencours->Predicat );
 
@@ -56,11 +90,27 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 			Tinter = Tencours->Suivant ; // Tinter prends la valeur de Tencours Suivante
 
 			while ( Tinter != NULL ) {
-				// Si Tinter et Tencours ont d autres places sortants en commun alors completer eqution
+				// Si Tinter et Tencours ont d autres places sortants en commun alors completer equation
 				if ( Tinter->ArcsSortants->Place[1] == Tencours->ArcsSortants->Place[1] ) {
 					printf(" or EP_%c and %s", Tinter->ArcsEntrants->Place[1], Tinter->Predicat );
 				}
 				Tinter = Tinter->Suivant ; // Tinter Suivante
+			}
+
+			Tinter2 = Tencours->Suivant ; // Tinter2 prends la valeur de Tencours Suivante
+
+			while ( Tinter2 != NULL ) {
+				// Regrouper les termes de maintiens (chercher les transitions non sensibilisees de place en cours)
+				if ( Tinter->ArcsSortants->Place[1] == Tencours->ArcsSortants->Place[1] ) {
+					char * NegPred = "" ;
+
+					printf("\n\n%s\n\n", NegPred );
+
+					Negation( Tinter2, NegPred );
+					printf("\n\n%s\n\n", NegPred );
+					printf(" or EP_%c and %s", Tinter->ArcsSortants->Place[1], NegPred );
+				}
+				Tinter2 = Tinter2->Suivant ; // Tinter2 Suivante
 			}
 
 			printf ( "\n\n" );
