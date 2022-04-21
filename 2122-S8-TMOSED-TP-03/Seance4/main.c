@@ -43,7 +43,7 @@ GenererLog (PlacesRdP, TransitionsRdP, LeFichierLog);
 GenererPlaces (PlacesRdP, LeFichierPlaces);
 //codef(TransitionsRdP, LeFichierEnC);
 GenererBlocF (TransitionsRdP, LeFichierEnC);
-GenererBlocG (PlacesRdP, LeFichierBlocG);
+//GenererBlocG (PlacesRdP, LeFichierBlocG);
 
 
 return 1;
