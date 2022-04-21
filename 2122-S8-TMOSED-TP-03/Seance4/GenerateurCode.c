@@ -14,6 +14,10 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 	char Trace[20] = "" ;
 	int flag = 1 ; // Autorisation de poursuivre
 
+	//
+	FILE * structure ;
+	structure  = fopen(LeFichierEnC,"w");
+
 /*
 	// Verification de Lecture et Extraction des donnees
 	Transition * Tverif		; // Transisition en cours de traitement (verif.)
@@ -47,23 +51,17 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 
 		// Ecriture autorisee
 		if ( flag == 1 ) {
-			//printf("\ncoucou1\n");
-			// Ecriture de l equation
-			printf("\t ES_%c = EP_%c and %s", Tencours->ArcsSortants->Place[1], Tencours->ArcsEntrants->Place[1], Tencours->Predicat );
 
-			//printf("\ncoucou2\n");
+			// Ecriture de l equation
+			fprintf(structure,"\t ES_%c = EP_%c and %s", Tencours->ArcsSortants->Place[1], Tencours->ArcsEntrants->Place[1], Tencours->Predicat );
 			Trace[indice] = Tencours->ArcsSortants->Place[1] ; // Tracabilite des places deja traitees
 
 			Tinter = Tencours->Suivant ; // Tinter prends la valeur de Tencours Suivante
 
-			//printf("coucou3\n");
-
 			while ( Tinter != NULL ) {
 				// Si Tinter et Tencours ont d autres places sortants en commun alors completer equation
-				//printf("coucou4\n");
 				if ( Tinter->ArcsSortants->Place[1] == Tencours->ArcsSortants->Place[1] ) {
-					printf(" or EP_%c and %s", Tinter->ArcsEntrants->Place[1], Tinter->Predicat );
-					//printf("coucou5\n");
+					fprintf(structure," or EP_%c and %s", Tinter->ArcsEntrants->Place[1], Tinter->Predicat );
 				}
 				Tinter = Tinter->Suivant ; // Tinter Suivante
 			}
@@ -73,12 +71,11 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 			while ( Tinter2 != NULL ) {
 				// Regrouper les termes de maintiens (chercher les transitions non sensibilisees de place en cours)
 				if ( Tinter2->ArcsSortants->Place[1] == Tencours->ArcsSortants->Place[1] ) {
-					printf(" or EP_%c and not(%s)", Tinter2->ArcsSortants->Place[1], Tinter2->Predicat );
+					fprintf(structure," or EP_%c and not(%s)", Tinter2->ArcsSortants->Place[1], Tinter2->Predicat );
 				}
 				Tinter2 = Tinter2->Suivant ; // Tinter2 Suivante
 			}
-
-			printf ( "\n\n" );
+			fprintf(structure,"\n\n");
 		}
 
 		Tencours = Tencours->Suivant ; // Tencours Suivante

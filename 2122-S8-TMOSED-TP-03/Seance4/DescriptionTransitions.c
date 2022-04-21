@@ -1,30 +1,6 @@
-// Debut du bloc F de la realisation
+	 ES_2 = EP_1 and Po = '1' or EP_2 and not(Po = '1')
 
-// code de la transition t1
-if ((p3 >= 1))
-   if (Cancel='1')
-	{
-	 //Demarquage des places en amont de t1
-	 p3 = p3-1 ;
-	 //Marquage des places en aval de t1
-	 p1 = p1+1 ;
-	}
+	 ES_0 = EP_1 and Accept = '1' and Po = '0' or EP_2 and Accept = '0' or EP_2 and Cancel = '1' and Po = '1' or EP_0 and not(Accept = '1' and Po = '0') or EP_0 and not(Accept = '0') or EP_0 and not(Cancel = '1' and Po = '1')
 
-// code de la transition
-   if (Accept='1' and Po='1')
-	}
+	 ES_1 = EP_0 and Po = '0' or EP_2 and Cancel = '0' or EP_1 and not(Po = '0') or EP_1 and not(Cancel = '0')
 
-// code de la transition t4
-if ((p4 >= 1))
-   if (Po='0')
-	{
-	 //Demarquage des places en amont de t4
-	 p4 = p4-1 ;
-	 //Marquage des places en aval de t4
-	 p2 = p2+1 ;
-	}
-
-// code de la transition ��
-   if (Accept='1' and Po='0')
-	}
-// Fin du bloc F de la realisation
