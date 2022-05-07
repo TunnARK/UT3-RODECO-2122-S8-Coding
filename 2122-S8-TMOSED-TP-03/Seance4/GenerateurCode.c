@@ -66,7 +66,7 @@ void GenererBlocF (Transition * Tstart, char LeFichierEnC[MAX_NOM]){
 				Tinter = Tinter->Suivant ; // Tinter Suivante
 			}
 
-			Tinter2 = Tencours ; // Tinter2 prends la valeur de Tencours Suivante
+			Tinter2 = Tencours ; // Tinter2 prends la valeur de Tencours
 
 			while ( Tinter2 != NULL ) {
 				// Regrouper les termes de maintiens (chercher les transitions non sensibilisees de place en cours)

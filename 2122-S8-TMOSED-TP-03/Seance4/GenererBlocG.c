@@ -1,7 +1,6 @@
 #include "types.c"
 #include <string.h>
 
-
 void GenererBlocG (Place *PlacesRdP, char LeFichierBlocG[MAX_NOM]){
   printf("\n\n>>> Generation Code Block M\n\n");
 
